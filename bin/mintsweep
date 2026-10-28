@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Launcher for MintSweep. Works from anywhere, including a desktop shortcut.
+set -euo pipefail
+HERE="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+ROOT="$(cd "$HERE/.." && pwd)"
+export PYTHONPATH="$ROOT${PYTHONPATH:+:$PYTHONPATH}"
+exec python3 -m mintsweep "$@"
