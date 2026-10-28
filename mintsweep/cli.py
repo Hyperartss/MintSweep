@@ -10,7 +10,7 @@ import os
 import sys
 import time
 
-from . import core
+from . import __version__, core
 
 
 def _print_table(targets: list[core.Target]) -> None:
@@ -268,6 +268,8 @@ def build_parser() -> argparse.ArgumentParser:
         prog="mintsweep",
         description="Choose exactly what to clean on Linux Mint. Nothing runs on its own.",
     )
+    parser.add_argument("--version", action="version",
+                        version=f"%(prog)s {__version__}")
     sub = parser.add_subparsers(dest="command")
 
     scan = sub.add_parser("scan", help="show what could be cleaned (read-only)")

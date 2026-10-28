@@ -31,7 +31,7 @@ removes what you tick and confirm.
 
 ## Install
 
-Download or clone this folder, then:
+Download the release zip (or clone this repo), unzip it, then:
 
 ```bash
 ./install.sh
